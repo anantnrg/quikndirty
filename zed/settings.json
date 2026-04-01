@@ -7,17 +7,61 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_branch_icon": true
+  },
+  "semantic_tokens": "combined",
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true
+  },
+  "vim": {
+    "cursor_shape": {
+      "visual": "hollow",
+      "insert": "bar"
+    },
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": true
+  },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "gutter": {
+    "runnables": false,
+    "breakpoints": false
+  },
+  "relative_line_numbers": "enabled",
+  "which_key": {
+    "delay_ms": 200,
+    "enabled": true,
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 400,
+    },
+  },
+  "ui_font_weight": 400.0,
+  "ui_font_family": "Space Grotesk",
+  "buffer_line_height": {
+    "custom": 2.2,
+  },
+  "buffer_font_family": "JetBrains Mono",
   "icon_theme": "Colored Zed Icons Theme Dark",
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "vim_mode": true,
   "base_keymap": "VSCode",
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Rosé Pine",
-  },
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "theme": "Rosé Pine",
 }
