@@ -1,0 +1,6 @@
+mozilla/
+!mozilla/firefox/6i8mbuhy.default-release/chrome/
+
+cache/
+Cache/
+*.log

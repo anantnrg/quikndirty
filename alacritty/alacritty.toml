@@ -1,0 +1,12 @@
+[general]
+import = [
+	"themes/rose-pine.toml"
+]
+
+[window]
+padding = { x = 16, y = 16 }
+decorations = "None"
+blur = true
+
+[scrolling]
+history = 100000
