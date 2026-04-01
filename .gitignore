@@ -4,3 +4,5 @@ mozilla/
 cache/
 Cache/
 *.log
+*.count
+go/
