@@ -14,10 +14,6 @@ Scope {
                 right: true
             }
 
-            margins {
-                right: 60
-            }
-
             color: "transparent"
 
             implicitWidth: 30
