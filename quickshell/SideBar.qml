@@ -20,6 +20,7 @@ Scope {
             }
 
             implicitWidth: 60
+            color: Config.bgPrimary
 
             Text {
                 text: "fucking test innit"
@@ -33,7 +34,7 @@ Scope {
         running: true
 
         stdout: StdioCollector {
-            onStreamFinished: topBar.time = this.text
+            onStreamFinished: sideBar.time = this.text
         }
     }
 

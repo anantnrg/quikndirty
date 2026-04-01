@@ -20,7 +20,9 @@ Scope {
             }
 
             implicitHeight: 30
-            
+
+            color: Config.bgPrimary
+
             Text {
                 text: "fucking test innit"
             }

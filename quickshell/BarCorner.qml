@@ -22,7 +22,7 @@ Scope {
             RoundCorner {
                 anchors.fill: parent
                 implicitSize: 20
-                color: "#fff"
+                color: Config.bgPrimary
                 corner: RoundCorner.CornerEnum.TopRight
             }
         }
