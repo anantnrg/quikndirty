@@ -3,7 +3,7 @@ import Quickshell.Io
 import QtQuick
 
 Scope {
-    id: root
+    id: topBar
     property string time
 
     Variants {
@@ -20,10 +20,9 @@ Scope {
             }
 
             implicitHeight: 30
-
+            
             Text {
-                anchors.centerIn: parent
-                text: root.time
+                text: "fucking test innit"
             }
         }
     }
@@ -34,7 +33,7 @@ Scope {
         running: true
 
         stdout: StdioCollector {
-            onStreamFinished: root.time = this.text
+            onStreamFinished: topBar.time = this.text
         }
     }
 
