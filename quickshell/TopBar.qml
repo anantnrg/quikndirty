@@ -1,48 +1,93 @@
 import Quickshell
-import Quickshell.Io
 import QtQuick
+import "components"
 
 Scope {
     id: topBar
-    property string time
-
+    
+    readonly property string time: {
+        Qt.formatDateTime(clock.date, "hh:mm:ss")
+    }
+    readonly property string date: {
+        Qt.formatDateTime(clock.date, "yyyy-MM-dd")
+    }
+    
     Variants {
         model: Quickshell.screens
-
+        
         PanelWindow {
-            required property var modelData
-            screen: modelData
-
             anchors {
                 top: true
                 left: true
                 right: true
             }
 
-            implicitHeight: 32
+            implicitHeight: 50
 
             color: Config.bgPrimary
 
-            Text {
-                text: "fucking test innit"
+            Item {
+                anchors.fill: parent
+            
+                Row {
+                    anchors.left: parent.left
+                    anchors.leftMargin: 12
+                    anchors.verticalCenter: parent.verticalCenter
+                    spacing: 8
+            
+                    Text {
+                        text: topBar.date
+                        color: Config.accent
+                        font.family: "JetBrains Mono"
+                        font.weight: 800
+                        font.pixelSize: 16
+                    }
+            
+                    Text {
+                        text: "•"
+                        color: Config.textSecondary
+                    }
+            
+                    Text {
+                        text: "Extra"
+                        color: Config.textPrimary
+                    }
+                }
+            
+                Row {
+                    anchors.centerIn: parent
+                    spacing: 8
+            
+                    Text {
+                        text: "Center"
+                        color: Config.textPrimary
+                    }
+            
+                    Text {
+                        text: "Stuff"
+                        color: Config.textSecondary
+                    }
+                }
+            
+                Row {
+                    anchors.right: parent.right
+                    anchors.rightMargin: 12
+                    anchors.verticalCenter: parent.verticalCenter
+                    spacing: 8
+            
+                    Capsule {
+                        side: Capsule.Side.Right
+                        icon: ""
+                        text: topBar.time
+                        capsuleHeight: 36
+                    }
+                }
             }
         }
     }
 
-    Process {
-        id: dateProc
-        command: ["date"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: topBar.time = this.text
-        }
-    }
-
-    Timer {
-        interval: 1000
-        running: true
-        repeat: true
-        onTriggered: dateProc.running = true
+    SystemClock {
+        id: clock
+        precision: SystemClock.Seconds
     }
 }

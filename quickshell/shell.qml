@@ -3,8 +3,8 @@ import "components"
 
 Scope {
     id: root
-    TopBar {}
     SideBar {}
+    TopBar {}
     
     Corner { cornerType: RoundCorner.CornerEnum.TopLeft }
     Corner { cornerType: RoundCorner.CornerEnum.TopRight }
