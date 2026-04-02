@@ -22,6 +22,7 @@ Item {
     property int spacing: 6
     property int accentWidth: 36
     property int fontSize: 14
+    property int iconSize: 14
 
     implicitHeight: capsuleHeight
     implicitWidth: row.implicitWidth
@@ -46,7 +47,7 @@ Item {
                 text: root.icon
                 color: root.bgColor
                 font.family: "Symbols Nerd Font Mono"
-                font.pixelSize: root.fontSize 
+                font.pixelSize: root.iconSize
             }
         }
 
@@ -93,7 +94,7 @@ Item {
                 text: root.icon
                 color: root.bgColor
                 font.family: "Symbols Nerd Font Mono"
-                font.pixelSize: root.fontSize + 2 
+                font.pixelSize: root.iconSize
             }
         }
     }
