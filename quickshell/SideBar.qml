@@ -4,7 +4,6 @@ import QtQuick
 
 Scope {
     id: sideBar
-    property string time
 
     Variants {
         model: Quickshell.screens
@@ -26,22 +25,5 @@ Scope {
                 text: "fucking test innit"
             }
         }
-    }
-
-    Process {
-        id: dateProc
-        command: ["date"]
-        running: true
-
-        stdout: StdioCollector {
-            onStreamFinished: sideBar.time = this.text
-        }
-    }
-
-    Timer {
-        interval: 1000
-        running: true
-        repeat: true
-        onTriggered: dateProc.running = true
     }
 }

@@ -4,5 +4,8 @@ Scope {
     id: root
     TopBar {}
     SideBar {}
-    BarCorner {}
+    TRCorner {}
+    TLCorner {}
+    BRCorner {}
+    BLCorner {}
 }

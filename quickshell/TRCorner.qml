@@ -3,7 +3,7 @@ import QtQuick
 import "components"
 
 Scope {
-    id: tlCorner
+    id: trCorner
 
     Variants {
         model: Quickshell.screens
@@ -16,12 +16,12 @@ Scope {
 
             color: "transparent"
 
-            implicitWidth: 30
-            implicitHeight: 30
+            implicitWidth: 32
+            implicitHeight: 32
 
             RoundCorner {
                 anchors.fill: parent
-                implicitSize: 20
+                implicitSize: 24
                 color: Config.bgPrimary
                 corner: RoundCorner.CornerEnum.TopRight
             }
