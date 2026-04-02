@@ -1,11 +1,13 @@
 import Quickshell
+import "components"
 
 Scope {
     id: root
     TopBar {}
     SideBar {}
-    TRCorner {}
-    TLCorner {}
-    BRCorner {}
-    BLCorner {}
+    
+    Corner { cornerType: RoundCorner.CornerEnum.TopLeft }
+    Corner { cornerType: RoundCorner.CornerEnum.TopRight }
+    Corner { cornerType: RoundCorner.CornerEnum.BottomLeft }
+    Corner { cornerType: RoundCorner.CornerEnum.BottomRight }
 }
