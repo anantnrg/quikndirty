@@ -50,13 +50,32 @@ Singleton {
             artist: (root.activePlayer?.metadata?.["xesam:artist"] ?? [""])[0]
         };
     }
-
+    
+    function applyRules(track) {
+        let result = track
+    
+        for (let rule of Config.mprisRules) {
+            let regex = new RegExp(rule.pattern, "i")
+    
+            if (regex.test(result)) {
+                return rule.replace
+            }
+        }
+    
+        return result.trim()
+    }
+    
     property string track: {
         if (!activeTrack)
-            return "";
+            return ""
+    
+        let t = ""
         if (activeTrack.artist && activeTrack.title)
-            return activeTrack.artist + " - " + activeTrack.title;
-        return activeTrack.title;
+            t = activeTrack.title + " - " + activeTrack.artist
+        else
+            t = activeTrack.title
+    
+        return applyRules(t)
     }
 
     property bool isPlaying: activePlayer && activePlayer.isPlaying

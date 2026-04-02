@@ -54,7 +54,7 @@ Scope {
                     Capsule {
                         side: Capsule.Side.Left
                         icon: "󰝚"
-                        text: MprisController.track || "No music"
+                        text: MprisController.track || "No music playing..."
                         capsuleHeight: 32
                         padding: 16
                         accentColor: Config.color5

@@ -15,8 +15,7 @@ Singleton {
     property color textSecondary: "#6e6a86"
 
     property color accent: "#c4a7e7"
-    
-    
+
     property color color1: "#eb6f92"
     property color color2: "#f6c177"
     property color color3: "#ebbcba"
@@ -27,4 +26,32 @@ Singleton {
     property int borderWidth: 12
     property int topbarHeight: 30
     property int sidebarWidth: 60
+
+    // Multimedia configuration
+    property var mprisRules: [
+        {
+            pattern: "^$",
+            replace: "Nothing Playing"
+        },
+        {
+            pattern: "Advertisement",
+            replace: "Nothing Playing"
+        },
+        {
+            pattern: "Twitter|X",
+            replace: "Nothing Playing"
+        },
+        {
+            pattern: "Reddit|/r",
+            replace: "Nothing Playing"
+        },
+        {
+            pattern: "YouTube",
+            replace: "Nothing Playing"
+        },
+        {
+            pattern: "Firefox",
+            replace: "Nothing Playing"
+        }
+    ]
 }
