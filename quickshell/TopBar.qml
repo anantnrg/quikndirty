@@ -19,7 +19,7 @@ Scope {
                 right: true
             }
 
-            implicitHeight: 30
+            implicitHeight: 32
 
             color: Config.bgPrimary
 

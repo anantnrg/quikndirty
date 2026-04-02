@@ -19,7 +19,7 @@ Scope {
                 right: true
             }
 
-            implicitWidth: 60
+            implicitWidth: 64
             color: Config.bgPrimary
 
             Text {
