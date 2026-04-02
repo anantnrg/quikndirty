@@ -1,6 +1,9 @@
+pragma ComponentBehavior: Bound
+
 import Quickshell
 import QtQuick
 import "components"
+import Quickshell.Services.Mpris
 
 Scope {
     id: topBar
@@ -12,6 +15,9 @@ Scope {
         Qt.formatDateTime(clock.date, "yyyy-MM-dd");
     }
 
+    // Media player
+    readonly property MprisPlayer player: MprisController.activePlayer
+    
     Variants {
         model: Quickshell.screens
 
@@ -42,6 +48,16 @@ Scope {
                         capsuleHeight: 32
                         padding: 16
                         accentColor: Config.color1
+                        iconSize: 16
+                    }
+                    
+                    Capsule {
+                        side: Capsule.Side.Left
+                        icon: "󰝚"
+                        text: MprisController.track || "No music"
+                        capsuleHeight: 32
+                        padding: 16
+                        accentColor: Config.color5
                         iconSize: 16
                     }
                 }
