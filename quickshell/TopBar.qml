@@ -12,12 +12,12 @@ Scope {
         Qt.formatDateTime(clock.date, "hh:mm:ss");
     }
     readonly property string date: {
-        Qt.formatDateTime(clock.date, "yyyy-MM-dd");
+        Qt.formatDateTime(clock.date, "dddd, yyyy-MM-dd");
     }
 
     // Media player
     readonly property MprisPlayer player: MprisController.activePlayer
-    
+
     Variants {
         model: Quickshell.screens
 
@@ -50,15 +50,9 @@ Scope {
                         accentColor: Config.color1
                         iconSize: 16
                     }
-                    
-                    Capsule {
-                        side: Capsule.Side.Left
-                        icon: "󰝚"
-                        text: MprisController.track || "No music playing..."
-                        capsuleHeight: 32
-                        padding: 16
-                        accentColor: Config.color5
-                        iconSize: 16
+
+                    MusicWidget {
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                 }
 
