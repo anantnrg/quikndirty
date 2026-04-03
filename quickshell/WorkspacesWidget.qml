@@ -15,7 +15,7 @@ Item {
     Rectangle {
         id: background
         anchors.fill: parent
-        color: Config.surface
+        color: Config.bgSecondary
         radius: height / 2
     }
     
