@@ -1,7 +1,7 @@
 pragma ComponentBehavior: Bound
 
 import Quickshell
-import Quickshell.Io
+import Quickshell.Hyprland
 import QtQuick
 
 Scope {
@@ -11,20 +11,61 @@ Scope {
         model: Quickshell.screens
 
         PanelWindow {
-            required property var modelData
-            screen: modelData
-
             anchors {
                 top: true
                 bottom: true
-                right: true
+                right: true 
             }
 
             implicitWidth: 64
             color: Config.bgPrimary
 
-            Text {
-                text: "fucking test innit"
+            Item {
+                anchors.fill: parent
+                
+                Column {
+                    anchors.top: parent.top
+                    anchors.topMargin: 14
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: 16
+                    
+                    Text {
+                        id: iconText
+                        color: Config.accent
+                        text: "󰣇"
+                        font.family: "Symbols Nerd Font Mono"
+                        font.pixelSize: 32
+                    
+                        SequentialAnimation on color {
+                            loops: Animation.Infinite
+                    
+                            ColorAnimation { to: Config.color1; duration: 4000 }
+                            ColorAnimation { to: Config.color2; duration: 4000 }
+                            ColorAnimation { to: Config.color3; duration: 4000 }
+                            ColorAnimation { to: Config.color5; duration: 4000 }
+                            ColorAnimation { to: Config.accent; duration: 4000 }
+                        }
+                    }
+                }
+                
+                Column {
+                    anchors.centerIn: parent
+                    spacing: 24
+                    
+                    WorkspacesWidget {}
+                }
+                
+                Column {
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 24
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: 16
+                    
+                    Text {
+                        color: "white"
+                        text: "bottom"
+                    }
+                }
             }
         }
     }

@@ -38,11 +38,11 @@ Singleton {
             replace: "Nothing Playing"
         },
         {
-            pattern: "Twitter|X",
+            pattern: " / X",
             replace: "Nothing Playing"
         },
         {
-            pattern: "Reddit|/r",
+            pattern: "Reddit|r/",
             replace: "Nothing Playing"
         },
         {
