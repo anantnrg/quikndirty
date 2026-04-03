@@ -9,7 +9,7 @@ Item {
 
     property int widgetHeight: 32
     property int accentWidth: 36
-    property int maxTextWidth: 320
+    property int maxTextWidth: 280
 
     implicitHeight: widgetHeight
     implicitWidth: accent.width + textBox.width

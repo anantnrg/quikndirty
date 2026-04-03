@@ -37,9 +37,9 @@ Scope {
 
                 Row {
                     anchors.left: parent.left
-                    anchors.leftMargin: 12
+                    anchors.leftMargin: 24
                     anchors.verticalCenter: parent.verticalCenter
-                    spacing: 8
+                    spacing: 24
 
                     Capsule {
                         side: Capsule.Side.Left
@@ -60,22 +60,14 @@ Scope {
                     anchors.centerIn: parent
                     spacing: 8
 
-                    Text {
-                        text: "Center"
-                        color: Config.textPrimary
-                    }
-
-                    Text {
-                        text: "Stuff"
-                        color: Config.textSecondary
-                    }
+                   ActiveWindow {} 
                 }
 
                 Row {
                     anchors.right: parent.right
-                    anchors.rightMargin: 12
+                    anchors.rightMargin: 24
                     anchors.verticalCenter: parent.verticalCenter
-                    spacing: 8
+                    spacing: 24
 
                     Capsule {
                         side: Capsule.Side.Right
