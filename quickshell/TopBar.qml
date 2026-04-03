@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 
 import Quickshell
+import Quickshell.Io
 import QtQuick
 import "components"
 import Quickshell.Services.Mpris
@@ -18,6 +19,15 @@ Scope {
     // Media player
     readonly property MprisPlayer player: MprisController.activePlayer
 
+    // Stats
+    property int cpu: 0
+    property int ram: 0
+    property int temp: 0
+   
+    function pad2(n) {
+        return n < 10 ? "0" + n : n
+    }
+    
     Variants {
         model: Quickshell.screens
 
@@ -68,6 +78,36 @@ Scope {
                     anchors.rightMargin: 24
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 24
+                    
+                    Capsule {
+                        side: Capsule.Side.Right
+                        icon: ""
+                        text: topBar.pad2(topBar.cpu) + "%"
+                        capsuleHeight: 32
+                        padding: 16
+                        accentColor: Config.color5
+                        iconSize: 16
+                    }
+                    
+                    Capsule {
+                        side: Capsule.Side.Right
+                        icon: ""
+                        text: topBar.pad2(topBar.ram) + "%"
+                        capsuleHeight: 32
+                        padding: 16
+                        accentColor: Config.color3
+                        iconSize: 16
+                    }
+                    
+                    Capsule {
+                        side: Capsule.Side.Right
+                        icon: ""
+                        text: topBar.pad2(topBar.temp) + "°C"
+                        capsuleHeight: 32
+                        padding: 16
+                        accentColor: Config.color2
+                        iconSize: 16
+                    }
 
                     Capsule {
                         side: Capsule.Side.Right
@@ -75,7 +115,7 @@ Scope {
                         text: topBar.time
                         capsuleHeight: 32
                         padding: 16
-                        accentColor: Config.color2
+                        accentColor: Config.color1
                         iconSize: 16
                     }
                 }
@@ -86,5 +126,32 @@ Scope {
     SystemClock {
         id: clock
         precision: SystemClock.Seconds
+    }
+    
+    Process {
+        id: statsProc
+        command: ["bash", "-c", "~/.config/quickshell/sysstat.sh"]
+        running: true
+    
+        stdout: StdioCollector {
+            onStreamFinished: {
+                try {
+                    let data = JSON.parse(this.text)
+    
+                    topBar.cpu = data.cpu
+                    topBar.ram = data.ram
+                    topBar.temp = data.temp
+                } catch (e) {
+                    console.log("JSON parse failed:", this.text)
+                }
+            }
+        }
+    }
+    
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: statsProc.running = true
     }
 }

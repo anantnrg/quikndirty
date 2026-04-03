@@ -22,7 +22,7 @@ Item {
             id: accent
             width: root.accentWidth
             height: root.widgetHeight
-            color: Config.color5
+            color: Config.color2
 
             radius: root.widgetHeight / 2
             topRightRadius: 0
@@ -43,7 +43,7 @@ Item {
             width: Math.min(text1.implicitWidth + 32, root.maxTextWidth + 32)
 
             color: Config.bgPrimary
-            border.color: Config.color5
+            border.color: Config.color2
             border.width: 2
 
             radius: root.widgetHeight / 2
@@ -68,7 +68,7 @@ Item {
                     Text {
                         id: text1
                         text: root.track || "No music"
-                        color: Config.color5
+                        color: Config.color2
                         font.family: "JetBrains Mono"
                         font.pixelSize: 14
                         font.weight: 700
@@ -78,7 +78,7 @@ Item {
                     Text {
                         id: text2
                         text: text1.text
-                        color: Config.color5
+                        color: Config.color2
                         font.family: text1.font.family
                         font.pixelSize: text1.font.pixelSize
                         font.weight: text1.font.weight
