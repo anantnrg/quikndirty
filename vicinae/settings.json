@@ -19,5 +19,12 @@
       "client_side_decorations": {
          "enabled": false
       }
+   },
+   "providers": {
+      "@sovereign/store.vicinae.awww-switcher": {
+         "preferences": {
+            "wallpaperPath": "~/Pictures/wallpapers"
+         }
+      }
    }
 }

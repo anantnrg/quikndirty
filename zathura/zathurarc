@@ -34,3 +34,4 @@ set smooth-scroll		"true"
 set scroll-full-overlap		0.01
 set scroll-step 		100
 set guioptions 			""
+set selection-clipboard clipboard

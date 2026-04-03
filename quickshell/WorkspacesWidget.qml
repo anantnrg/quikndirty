@@ -42,11 +42,11 @@ Item {
                 opacity: index + 1 === root.focusedWorkspaceId ? 1 : 0.32
                 
                 Behavior on height {
-                    NumberAnimation { duration: 250; easing.type: Easing.InOutCubic }
+                    NumberAnimation { duration: 250; easing.type: Easing.InOutCirc }
                 }
 
                 Behavior on opacity {
-                    NumberAnimation { duration: 250; easing.type: Easing.InOutCubic }
+                    NumberAnimation { duration: 250; easing.type: Easing.InOutCirc }
                 }
 
                 MouseArea {
