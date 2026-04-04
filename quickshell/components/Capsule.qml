@@ -24,8 +24,15 @@ Item {
     property int fontSize: 14
     property int iconSize: 14
 
+    property string widthSample: ""
+
     implicitHeight: capsuleHeight
     implicitWidth: row.implicitWidth
+
+    FontMetrics {
+        id: metrics
+        font.family: "Space Grotesk"
+    }
 
     Row {
         id: row
@@ -63,7 +70,7 @@ Item {
             topRightRadius: root.side === Capsule.Side.Left ? root.capsuleHeight / 2 : 0
             bottomLeftRadius: root.side === Capsule.Side.Right ? root.capsuleHeight / 2 : 0
             bottomRightRadius: root.side === Capsule.Side.Left ? root.capsuleHeight / 2 : 0
-            
+
             Row {
                 id: textRow
                 anchors.centerIn: parent
@@ -72,9 +79,12 @@ Item {
                 Text {
                     text: root.text
                     color: root.accentColor
-                    font.family: "JetBrains Mono"
+                    font.family: "Space Grotesk"
+                    font.letterSpacing: 0.42
                     font.weight: 700
-                    font.pixelSize: root.fontSize 
+                    font.pixelSize: root.fontSize
+                    width: root.widthSample != "" ? metrics.advanceWidth(root.widthSample): undefined
+                    anchors.verticalCenter: parent.verticalCenter
                 }
             }
         }

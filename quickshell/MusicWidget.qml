@@ -69,8 +69,9 @@ Item {
                         id: text1
                         text: root.track || "No music"
                         color: Config.color2
-                        font.family: "JetBrains Mono"
-                        font.pixelSize: 14
+                        font.family: "Space Grotesk"
+                        font.pixelSize: 15
+                        font.letterSpacing: 0.42
                         font.weight: 700
                         anchors.verticalCenter: parent.verticalCenter
                     }

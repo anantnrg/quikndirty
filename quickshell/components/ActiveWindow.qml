@@ -39,8 +39,9 @@ Item {
         text: root.windowText
         color: Config.accent
     
-        font.family: "JetBrains Mono"
-        font.pixelSize: 14
+        font.family: "Space Grotesk"
+        font.pixelSize: 15
+        font.letterSpacing: 0.42
         font.weight: 700
     
         elide: Text.ElideRight
