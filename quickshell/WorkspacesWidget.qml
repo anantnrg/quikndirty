@@ -1,7 +1,6 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Layouts
 import Quickshell.Hyprland
 
 Item {
@@ -23,9 +22,7 @@ Item {
         id: workspaceColumn
         spacing: 20
         anchors.centerIn: parent
-       
-        anchors.topMargin: 20
-        anchors.bottomMargin: 20
+      
         
         Repeater {
             model: root.totalWorkspaces

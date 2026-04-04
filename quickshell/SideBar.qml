@@ -16,6 +16,8 @@ Scope {
                 bottom: true
                 right: true 
             }
+            
+            id: sideBarWindow
 
             implicitWidth: 64
             color: Config.bgPrimary
@@ -57,13 +59,12 @@ Scope {
                 
                 Column {
                     anchors.bottom: parent.bottom
-                    anchors.bottomMargin: 24
+                    anchors.bottomMargin: 16 
                     anchors.horizontalCenter: parent.horizontalCenter
                     spacing: 16
-                    
-                    Text {
-                        color: "white"
-                        text: "bottom"
+                   
+                    SystemTray {
+                        parentWindow: sideBarWindow
                     }
                 }
             }

@@ -42,7 +42,7 @@ Item {
         font.family: "Space Grotesk"
         font.pixelSize: 15
         font.letterSpacing: 0.42
-        font.weight: 700
+        font.weight: 600
     
         elide: Text.ElideRight
         maximumLineCount: 1
