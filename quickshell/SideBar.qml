@@ -29,7 +29,7 @@ Scope {
                     anchors.top: parent.top
                     anchors.topMargin: 14
                     anchors.horizontalCenter: parent.horizontalCenter
-                    spacing: 16
+                    spacing: 40 
                     
                     Text {
                         id: iconText
@@ -48,6 +48,10 @@ Scope {
                             ColorAnimation { to: Config.accent; duration: 4000 }
                         }
                     }
+                    
+                    SystemTray {
+                        parentWindow: sideBarWindow
+                    }
                 }
                 
                 Column {
@@ -63,9 +67,6 @@ Scope {
                     anchors.horizontalCenter: parent.horizontalCenter
                     spacing: 16
                    
-                    SystemTray {
-                        parentWindow: sideBarWindow
-                    }
                 }
             }
         }

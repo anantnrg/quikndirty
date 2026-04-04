@@ -54,4 +54,37 @@ Singleton {
             replace: "Nothing Playing"
         }
     ]
+
+    property var trayIconOverrides: [
+        {
+            pattern: "discord|legcord|vesktop",
+            icon: "",
+            color: "#5865F2"
+        },
+        {
+            pattern: "whatsapp|elecwhat|elec-what",
+            icon: "",
+            color: "#25D366"
+        },
+        {
+            pattern: "spotify",
+            icon: "",
+            color: "#1DB954"
+        },
+        {
+            pattern: "youtube",
+            icon: "",
+            color: "#FF0000"
+        },
+        {
+            pattern: "steam",
+            icon: "",
+            color: "#1B2838"
+        },
+        {
+            pattern: "nm-applet",
+            icon: "",
+            color: "#31748f"
+        }
+    ]
 }
