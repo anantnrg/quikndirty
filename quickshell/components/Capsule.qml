@@ -24,15 +24,8 @@ Item {
     property int fontSize: 14
     property int iconSize: 14
 
-    property string widthSample: ""
-
     implicitHeight: capsuleHeight
     implicitWidth: row.implicitWidth
-
-    FontMetrics {
-        id: metrics
-        font.family: "Space Grotesk"
-    }
 
     Row {
         id: row
@@ -79,12 +72,9 @@ Item {
                 Text {
                     text: root.text
                     color: root.accentColor
-                    font.family: "Space Grotesk"
-                    font.letterSpacing: 0.42
+                    font.family: "JetBrains Mono"
                     font.weight: 700
                     font.pixelSize: root.fontSize
-                    width: root.widthSample != "" ? metrics.advanceWidth(root.widthSample): undefined
-                    anchors.verticalCenter: parent.verticalCenter
                 }
             }
         }

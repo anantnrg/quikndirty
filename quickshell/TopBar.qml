@@ -87,7 +87,6 @@ Scope {
                         padding: 16
                         accentColor: Config.color5
                         iconSize: 16
-                        widthSample: "00%"
                     }
 
                     Capsule {
@@ -98,7 +97,6 @@ Scope {
                         padding: 16
                         accentColor: Config.color3
                         iconSize: 16
-                        widthSample: "00%"
                     }
 
                     Capsule {
@@ -109,7 +107,6 @@ Scope {
                         padding: 16
                         accentColor: Config.color2
                         iconSize: 16
-                        widthSample: "00°C"
                     }
 
                     Capsule {
@@ -120,7 +117,6 @@ Scope {
                         padding: 16
                         accentColor: Config.color1
                         iconSize: 16
-                        widthSample: " 00:00:00 "
                     }
                 }
             }

@@ -19,7 +19,7 @@ Scope {
             
             id: sideBarWindow
 
-            implicitWidth: 64
+            implicitWidth: 56
             color: Config.bgPrimary
 
             Item {
@@ -27,7 +27,7 @@ Scope {
                 
                 Column {
                     anchors.top: parent.top
-                    anchors.topMargin: 14
+                    anchors.topMargin: 16
                     anchors.horizontalCenter: parent.horizontalCenter
                     spacing: 40 
                     
@@ -36,7 +36,8 @@ Scope {
                         color: Config.accent
                         text: "󰣇"
                         font.family: "Symbols Nerd Font Mono"
-                        font.pixelSize: 32
+                        font.pixelSize: 28
+                        anchors.horizontalCenter: parent.horizontalCenter
                     
                         SequentialAnimation on color {
                             loops: Animation.Infinite

@@ -69,10 +69,9 @@ Item {
                         id: text1
                         text: root.track || "No music"
                         color: Config.color2
-                        font.family: "Space Grotesk"
+                        font.family: "JetBrains Mono"
                         font.pixelSize: 14
-                        font.letterSpacing: 0.42
-                        font.weight: 600
+                        font.weight: 700
                         anchors.verticalCenter: parent.verticalCenter
                     }
 
@@ -83,7 +82,6 @@ Item {
                         font.family: text1.font.family
                         font.pixelSize: text1.font.pixelSize
                         font.weight: text1.font.weight
-                        font.letterSpacing: text1.font.letterSpacing
 
                         anchors.verticalCenter: parent.verticalCenter
                         x: text1.width + scrollRoot.gap
