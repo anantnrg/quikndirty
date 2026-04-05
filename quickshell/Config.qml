@@ -84,7 +84,7 @@ Singleton {
         {
             pattern: "nm-applet",
             icon: "",
-            color: "#31748f"
+            color: "#e0def4"
         }
     ]
 }

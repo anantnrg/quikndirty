@@ -17,4 +17,9 @@ ram_percent=$((used * 100 / total))
 
 temp=$(sensors | awk '/Tctl:/ {print int($2)}')
 
-echo "{\"cpu\": $cpu, \"ram\": $ram_percent, \"temp\": $temp}"
+network=$(ip route get 1.1.1.1 2>/dev/null | grep -q "dev" && echo 1 || echo 0)
+
+volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -d '%')
+muted=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -q yes && echo 1 || echo 0)
+
+echo "{\"cpu\": $cpu, \"ram\": $ram_percent, \"temp\": $temp, \"net\": $network, \"vol\": $volume, \"muted\": $muted}"
